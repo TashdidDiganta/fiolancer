@@ -1,0 +1,12 @@
+.DS_Store
+.htaccess
+wp-config.php
+wp-content/uploads
+wp-content/cache
+wp-content/advanced-cache.php
+wp-content/wpo-cache
+wp-content/fonts
+wp-content/languages
+wp-content/ai1wm-backups
+wp-content/plugins/all-in-one-wp-migration/storage/error.log
+node_modules
