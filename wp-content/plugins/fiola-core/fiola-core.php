@@ -6,7 +6,7 @@
 	* Version:     1.0.1
 	* Author:      Tashdid Diganta
 	* Author URI:  htniloss://example.com/
-	* Text Domain: fiola-core
+	* Text Domain: fio
 	* Elementor tested up to: 3.16.3
 */
 

@@ -106,6 +106,11 @@
                                <?php fio_header_logo(); ?>
                             </div>
                             <div class="header-category">
+                                <?php
+                                //  $custom_text = get_field('category_name');
+                                //  $valuess = get_field("name");
+                               
+                                 ?>
                                 <a href="#" class="category-text"><i class="flaticon-dots-menu"></i>Category</a>
                                  <?php fio_category_menu() ?>
                             </div>

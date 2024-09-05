@@ -111,7 +111,7 @@ function fio_breadcrumb_func() {
                     <div class="row">
                         <div class="col-12">
                             <div class="breadcrumb-content">
-                                <span class="sub-title">welcome to fiolancer</span>
+                                <span class="sub-title" ><?php echo get_theme_mod('breadcrumb_sub_title', 'fio'); ?></span>
                                 <h2 class="title"> <?php echo fio_kses( $title ); ?> </h2>
                             </div>
                         </div>

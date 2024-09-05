@@ -249,7 +249,6 @@ if ( !class_exists( 'Fio_Category_Navwalker_Class' ) ) {
              * output inside of the item before the $title (the link text).
              */
             $icon_class_string = get_post_meta( $item->ID, 'icon', true );
-            var_dump($icon_class_string);
          
             $icon_html = '';
             if ( !empty( $icon_class_string ) ) {
@@ -283,7 +282,7 @@ if ( !class_exists( 'Fio_Category_Navwalker_Class' ) ) {
                 }
             }
 
-            // Put the item contents into $output.
+            // Put the item contents into $output. nav name ////////////////////********************////////////////////////////////// */ dorkari
             $item_output .= isset( $args->link_before ) ?  $icon_html . '<span>' . $args->link_before . $title . $args->link_after . '</span>' : '';
             /**
              * This is the end of the internal nav item. We need to close the

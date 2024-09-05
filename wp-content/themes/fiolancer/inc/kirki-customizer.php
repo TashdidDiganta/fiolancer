@@ -490,7 +490,24 @@ function header_breadcrumb_section(){
         ]
     );
 
-    // header_logo_section section 
+    // header_breadcrumb_section section 
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'breadcrumb_sub_title',
+            'label'    => esc_html__( 'Sub Title', 'fio' ),
+            'section'  => 'header_breadcrumb_section',
+            'default'  => "welcome to fiolancer",
+            'priority' => 10,
+        ]
+    );
+    new \Kirki\Field\Textarea(
+        [
+            'settings'    => 'breadcrumb_blog_title',
+            'label'       => esc_html__( 'End Cridets', 'kirki' ),
+            'section'     => 'header_breadcrumb_section',
+            'default'     => esc_html__( 'News & Insights' ),
+        ]
+    );
     new \Kirki\Field\Image(
         [
             'settings'    => 'breadcrumb_image',
@@ -499,51 +516,9 @@ function header_breadcrumb_section(){
             'section'     => 'header_breadcrumb_section',
         ]
     );
-    new \Kirki\Field\Color(
-        [
-            'settings'    => 'breadcrumb_bg_color',
-            'label'       => __( 'Breadcrumb BG Color', 'fio' ),
-            'description' => esc_html__( 'You can change breadcrumb bg color from here.', 'fio' ),
-            'section'     => 'header_breadcrumb_section',
-            'default'     => '#f3fbfe',
-        ]
-    );
 
-    new \Kirki\Field\Dimensions(
-        [
-            'settings'    => 'breadcrumb_padding',
-            'label'       => esc_html__( 'Padding Control', 'fio' ),
-            'description' => esc_html__( 'Padding', 'fio' ),
-            'section'     => 'header_breadcrumb_section',
-            'default'     => [
-                'padding-top'  => '',
-                'padding-bottom' => '',
-            ],
-        ]
-    );
-    new \Kirki\Field\Typography(
-        [
-            'settings'    => 'breadcrumb_typography',
-            'label'       => esc_html__( 'Typography Control', 'fio' ),
-            'description' => esc_html__( 'The full set of options.', 'fio' ),
-            'section'     => 'header_breadcrumb_section',
-            'priority'    => 10,
-            'transport'   => 'auto',
-            'default'     => [
-                'font-family'     => '',
-                'variant'         => '',
-                'color'           => '',
-                'font-size'       => '',
-                'line-height'     => '',
-                'text-align'      => '',
-            ],
-            'output'      => [
-                [
-                    'element' => '.tpbreadcrumb-title',
-                ],
-            ],
-        ]
-    );
+
+
 
 
 }

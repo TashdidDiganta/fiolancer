@@ -26,7 +26,7 @@ class Custom_Services_Widget extends WP_Widget {
          
             'menu' => 'footer-widget__services-list list-unstyled ', 
             'container' => false, 
-            'menu_id' => 'menu', 
+            'menu_id' => '', 
             'menu_class'=>'list-wrap menu', 
             'link_before'    => '',
             'theme_location'=>'footer-menu' 
