@@ -13,15 +13,15 @@ function fio_widgets_init() {
     $footer_style_5_switch = get_theme_mod( 'footer_style_5_switch', true );
     $footer_style_6_switch = get_theme_mod( 'footer_style_6_switch', true );
 
-    include_once(get_parent_theme_file_path() . '/inc/custom-widgets/class-category-widget.php');
-    include_once(get_parent_theme_file_path() . '/inc/custom-widgets/class-socials-widget.php');
-    include_once(get_parent_theme_file_path() . '/inc/custom-widgets/class-insta-widget.php');
-    include_once(get_parent_theme_file_path() . '/inc/custom-widgets/class-populer-post-widget.php');
+    // include_once(get_parent_theme_file_path() . '/inc/custom-widgets/class-category-widget.php');
+    // include_once(get_parent_theme_file_path() . '/inc/custom-widgets/class-socials-widget.php');
+    // include_once(get_parent_theme_file_path() . '/inc/custom-widgets/class-insta-widget.php');
+    // include_once(get_parent_theme_file_path() . '/inc/custom-widgets/class-populer-post-widget.php');
 
-    register_widget('Custom_Categories_Widget');
-    register_widget('Custom_Social_Widget');
-    register_widget('Custom_Insta_Widget');
-    register_widget('Custom_Populer_Post_Widget');
+    // register_widget('Custom_Categories_Widget');
+    // register_widget('Custom_Social_Widget');
+    // register_widget('Custom_Insta_Widget');
+    // register_widget('Custom_Populer_Post_Widget');
 
     /**
      * blog sidebar

@@ -5,7 +5,7 @@ class Custom_Insta_Widget extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'Custom_Instagram_Widget',  // Widget ID
-            'Fio Instagram Widget',  // Widget name
+            'Fiola Instagram Widget',  // Widget name
             array(
                 'description' => 'A custom widget to display categories in the sidebar.'
             )

@@ -5,12 +5,96 @@ new \Kirki\Panel(
     'panel_id',
     [
         'priority'    => 10,
-        'title'       => esc_html__( 'Fio Customizer', 'fio' ),
+        'title'       => esc_html__( 'Fiola Customizer', 'fio' ),
         'description' => esc_html__( 'Fio Customizer Description.', 'fio' ),
     ]
 );
 
 
+// About Me section
+function about_me_section(){
+
+    new \Kirki\Section(
+        'about_me_section',
+        [
+            'title'       => esc_html__( 'About Me', 'kirki' ),
+            'description' => esc_html__( 'About Me Section Description.', 'kirki' ),
+            'panel'       => 'panel_id',
+            'priority'    => 60,
+        ]
+    );
+
+    new \Kirki\Field\Image(
+        [
+            'settings'    => 'image_setting_url',
+            'label'       => esc_html__( 'Image Control (URL)', 'kirki' ),
+            'description' => esc_html__( 'The saved value will be the URL.', 'kirki' ),
+            'section'     => 'about_me_section',
+            'default'     => '',
+        ]
+    );
+
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'author_name',
+            'label'    => esc_html__( 'About Me', 'kirki' ),
+            'section'  => 'about_me_section',
+            'default'  => esc_html__( 'Rosalina D. Willaimson', 'kirki' ),
+            'priority' => 10,
+        ]
+    );
+
+    new \Kirki\Field\Textarea(
+        [
+            'settings'    => 'about_textarea',
+            'label'       => esc_html__( 'Description', 'kirki' ),
+            'section'     => 'about_me_section',
+            'default'     => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.', 'kirki' ),
+        ]
+    );
+
+    new \Kirki\Field\Repeater(
+        [
+            'settings'     => 'about_social',
+            'label'        => esc_html__( 'footer_social_links', 'kirki' ),
+            'section'      => 'about_me_section',
+            'priority'     => 10,
+
+            'default'      => [
+            ],
+            'row_label'    => [
+                'type'  => 'field',
+                'value' => esc_html__( 'ROW', 'kirki' ),
+                'field' => 'link_target',
+            ],
+            'fields' => [
+                'link_target'   => [
+                    'type'        => 'select',
+                    'label'       => esc_html__( 'Choose social media', 'kirki' ),
+                    'description' => esc_html__( 'Description', 'kirki' ),
+                    'default'     => "<i class='fab fa-facebook-f'></i>",
+                    'choices' => [
+                        "<i class='fab fa-facebook-f'></i>" => "Facebook",
+                        "<i class='fab fa-twitter'></i>" => "Twitter",
+                        "<i class='fab fa-pinterest'></i>" => "Pinterest",
+                        "<i class='fab fa-behance'></i>" => "Behance",
+                        "<i class='fab fa-youtube'></i>" => "Youtube",
+                    ],
+                ],
+                'link_url'    => [
+                    'type'        => 'text',
+                    'label'       => esc_html__( 'Link URL', 'kirki' ),
+                    'description' => esc_html__( 'Description', 'kirki' ),
+                    'default'     => '',
+                ],
+            ],
+        ]
+    );
+ 
+}
+about_me_section();
+
+// header main section
 function header_main_section(){
     // header_top_bar section 
     new \Kirki\Section(
@@ -227,9 +311,7 @@ function preloader_section(){
         ]
     );   
 }
-
 preloader_section();
-
 
 // offcanvas_side_section
 function offcanvas_side_section(){
@@ -347,7 +429,6 @@ function offcanvas_side_section(){
     );
 }
 offcanvas_side_section();
-
 
 // header_logo_section
 function header_logo_section(){
@@ -467,9 +548,6 @@ function header_breadcrumb_section(){
 
 }
 header_breadcrumb_section();
-
-
-
 
 // footer layout
 function footer_layout_section(){

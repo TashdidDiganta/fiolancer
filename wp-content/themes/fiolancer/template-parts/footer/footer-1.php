@@ -156,20 +156,22 @@ default:
 
 <!-- Footer-start -->
 <footer class="footer-area footer-style-three">
-    <div class="footer-main-wrap footer-padding">
-        <div class="container">
-            <div class="footer-main-border">
-                <div class="row">
-                    <?php for( $num = 1; $num <= $footer_widgets; $num++) :?>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <?php dynamic_sidebar('footer-' . $num); ?>
+    <?php if(is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-4') ):?>
+        <div class="footer-main-wrap footer-padding">
+            <div class="container">
+                <div class="footer-main-border">
+                    <div class="row">
+                        <?php for( $num = 1; $num <= $footer_widgets; $num++) :?>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <?php dynamic_sidebar('footer-' . $num); ?>
+                        </div>
+                        <?php endfor?>
                     </div>
-                    <?php endfor; ?>
                 </div>
             </div>
         </div>
-    </div>
-
+    <?php endif;?>
+    
     <div class="copyright-wrap">
         <div class="container">
             <div class="row">
@@ -179,6 +181,7 @@ default:
                         $args = [
                             'echo'        => false,
                             'menu'        => $menu,
+                            'theme_location'=>'mini-footer-menu', 
                             'menu_class'  => 'list-unstyled footer-widget-five__menu',
                             'fallback_cb' => 'Fio_Navwalker_Class::fallback',
                             'container'   => '',
@@ -194,7 +197,7 @@ default:
                 </div>
                 <div class="col-xl-4 col-md-6">
                     <div class="copyright-text text-center text-md-start text-xl-center">
-                        <?php echo get_theme_mod( 'fiolancer_cridets', '' ); ?>
+                        <p><?php echo get_theme_mod( 'fiolancer_cridets', 'Copyright & Design By <span>@Fiolancer</span> - 2023' ); ?></p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6">

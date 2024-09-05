@@ -22,7 +22,7 @@ $blog_column = is_active_sidebar( 'blog-sidebar' ) ? 'col-xl-8 col-lg-8' : 'col-
     <div class="container">
         <div class="row">
 			<div class="<?php print esc_attr( $blog_column );?>">
-				<div class="nl-postbox-wrapper pr-50">
+				<div class="nl-postbox-wrapper">
 					<?php
 						if ( have_posts() ){
     					if ( is_home() && !is_front_page() ):

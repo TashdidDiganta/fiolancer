@@ -5,7 +5,7 @@ class Custom_Social_Widget extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'Custom_Social_Widget',  // Widget ID
-            'Fio Social Widget',  // Widget name
+            'Fiola Social Widget',  // Widget name
             array(
                 'description' => 'A custom widget to display categories in the sidebar.'
             )

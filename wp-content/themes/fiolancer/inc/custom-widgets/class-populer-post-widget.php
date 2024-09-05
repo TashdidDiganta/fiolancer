@@ -6,7 +6,7 @@ class Custom_Populer_Post_Widget extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'custom_categories_widget',  // Widget ID
-            'zeta populer post',  // Widget name
+            'Fiola populer post',  // Widget name
             array(
                 'description' => 'A custom widget to display categories in the sidebar.'
             )

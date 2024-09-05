@@ -5972,10 +5972,13 @@ header {
 .tg-rc-post-thumb {
 	margin-right: 20px;
 	width: 90px;
+	height: 90px;
 	flex: 0 0 90px;
 }
 .tg-rc-post-thumb img {
-	border-radius: 6px;
+	width: 100%;
+	height: 100%;
+	border-radius: 7px;
 }
 .tg-rc-post-content .title {
 	font-size: 16px;
@@ -6952,6 +6955,11 @@ blockquote cite,
 	column-gap: 40px;
 	row-gap: 15px;
 }
+
+.footer-col-2{
+	padding-left: 55px;
+}
+
 .footer-fact-item {
     display: flex;
     align-items: center;
@@ -7043,10 +7051,10 @@ blockquote cite,
 .footer-newsletter p {
     margin: 0 30px 20px 0;
 }
-.footer-newsletter form {
+.footer-newsletter div {
     position: relative;
 }
-.footer-newsletter form [type=email] {
+.footer-newsletter div [type=email] {
     width: 100%;
     border: none;
     background: #fff;
@@ -7054,10 +7062,10 @@ blockquote cite,
     min-height: 60px;
     border-radius: 6px;
 }
-.footer-newsletter form [type=email]::placeholder {
+.footer-newsletter div [type=email]::placeholder {
 	color: #737373;
 }
-.footer-newsletter form [type=submit] {
+.footer-newsletter div [type=submit] {
     position: absolute;
     top: 0;
     right: -1px;

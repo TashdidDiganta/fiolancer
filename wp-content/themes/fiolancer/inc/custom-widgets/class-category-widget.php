@@ -5,7 +5,7 @@ class Custom_Categories_Widget extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'Custom_Categories_Widget',  // Widget ID
-            'Fio Categories Widget',  // Widget name
+            'Fiola Categories Widget',  // Widget name
             array(
                 'description' => 'A custom widget to display categories in the sidebar.'
             )
