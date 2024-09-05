@@ -248,7 +248,8 @@ if ( !class_exists( 'Fio_Category_Navwalker_Class' ) ) {
              * icon classes form the icon markup with an <i> element. This is
              * output inside of the item before the $title (the link text).
              */
-            $icon_class_string = get_post_meta( $item->ID, 'navigation_icon', true );
+            $icon_class_string = get_post_meta( $item->ID, 'icon', true );
+            var_dump($icon_class_string);
          
             $icon_html = '';
             if ( !empty( $icon_class_string ) ) {
