@@ -209,6 +209,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 require_once FIO_THEME_INC . 'class-navwalker.php';
 require_once FIO_THEME_INC . 'class-category-walker.php';
+require_once FIO_THEME_INC . 'class-viwes-script.php';
 require_once FIO_THEME_INC . 'class-tgm-plugin-activation.php';
 require_once FIO_THEME_INC . 'add_plugin.php';
 require_once FIO_THEME_INC . '/common/fio-breadcrumb.php';
@@ -408,5 +409,9 @@ function callback_function(){
 }
 
 add_action("add_meta_boxes", "add_meta_box_function");
+
+
+
+
 
 

@@ -19,13 +19,13 @@ $blog_tag_col = $fio_blog_single_social ? 'col-xl-8 col-lg-6' : 'col-xl-12';
 if ( is_single() ) : ?>
 <!-- details start -->
 <article id="post-<?php the_ID();?>" <?php post_class( 'nl-postbox-details-article' );?>>
-    <?php get_template_part( 'template-parts/blog/blog-details-meta' ); ?>
+
     
     <div class="news-details__img">
     <?php if ( has_post_format('image') ): ?>
     <!-- if post has image -->
     <?php if ( has_post_thumbnail() ): ?>
-    <div class="nl-postbox-details-thumb">
+    <div class="tg-blog-post-thumb">
         <?php the_post_thumbnail( 'full', ['class' => 'img-responsive'] );?>
     </div>
     <?php endif;?>
@@ -34,7 +34,7 @@ if ( is_single() ) : ?>
     <!-- if post has video -->
     <?php elseif ( has_post_format('video') ): ?>
     <?php if ( has_post_thumbnail() ): ?>
-    <div class="nl-postbox-details-thumb nl-postbox-details-video">
+    <div class="tg-blog-post-thumb nl-postbox-details-video">
 
         <?php the_post_thumbnail( 'full', ['class' => 'img-responsive'] );?>
 
@@ -49,7 +49,7 @@ if ( is_single() ) : ?>
     <!-- if post has audio -->
     <?php elseif ( has_post_format('audio') ): ?>
     <?php if ( !empty( $fio_audio_url ) ): ?>
-    <div class="nl-postbox-details-thumb nl-postbox-details-audio">
+    <div class="tg-blog-post-thumb nl-postbox-details-audio">
         <?php echo wp_oembed_get( $fio_audio_url ); ?>
     </div>
     <?php endif; ?>
@@ -74,25 +74,28 @@ if ( is_single() ) : ?>
     <!-- defalut image format -->
     <?php else: ?>
     <?php if ( has_post_thumbnail() ): ?>
-    <div class="nl-postbox-details-thumb">
+    <div class="tg-blog-post-thumb">
         <?php the_post_thumbnail( 'full', ['class' => 'img-responsive'] );?>
+    </div>
+    <div class="">
+      
     </div>
     <?php endif;?>
     <?php endif;?>
     </div>
     
-    <div class="nl-postbox-details-article-inner">
-
+    <div class="tg-blog-post-content tg-blog-details-content">
+        <?php get_template_part( 'template-parts/blog/blog-details-meta' ); ?>
         <!-- content start -->
         <?php the_content(); ?>
 
         <?php
-            wp_link_pages( [
-                'before'      => '<div class="page-links">' . esc_html__( 'Pages:', 'fio' ),
-                'after'       => '</div>',
-                'link_before' => '<span class="page-number">',
-                'link_after'  => '</span>',
-            ] );
+            // wp_link_pages( [
+            //     'before'      => '<div class="page-links">' . esc_html__( 'Pages:', 'fio' ),
+            //     'after'       => '</div>',
+            //     'link_before' => '<span class="page-number">',
+            //     'link_after'  => '</span>',
+            // ] );
         ?>
     </div>
 
@@ -140,9 +143,9 @@ $category = get_the_category();
             <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
             <div class="tg-blog-post-meta">
                 <ul class="list-wrap">
-                    <li><i class="far fa-eye"></i>232 Views</li>
+                    <li><i class="far fa-eye"></i><?php echo get_post_views(get_the_ID()); ?></li>
                     <li><a href="<?php the_permalink(); ?>"><i class="far fa-comments"></i><?php echo get_comments_number(); ?></a></li>
-                    <li><i class="far fa-calendar-alt"></i><?php echo get_the_date('d M Y') ?></li>
+                    <li><i class="far fa-calendar-alt"></i><?php echo get_the_date('dS M Y') ?></li>
                 </ul>
             </div>
         </div>
@@ -165,13 +168,13 @@ $category = get_the_category();
         <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
         <div class="tg-blog-post-meta">
             <ul class="list-wrap">
-                <li><i class="far fa-eye"></i>232 Views</li>
+                <li><i class="far fa-eye"></i><?php echo get_post_views(get_the_ID()); ?></li>
                 <li><a href="<?php the_permalink(); ?>"><i class="far fa-comments"></i><?php echo get_comments_number(); ?></a></li>
-                <li><i class="far fa-calendar-alt"></i> <?php echo get_the_date('d M Y') ?></li>
+                <li><i class="far fa-calendar-alt"></i><?php echo get_the_date('dS M Y') ?></li>
             </ul>
         </div>
         <div class="tg-post-text">
-            <?php the_content(); ?>
+           <?php echo substr(get_the_excerpt(),0, 320);  ?>
         </div>
         <div class="tg-blog-post-bottom">
             <a href="<?php the_permalink(); ?>" class="btn theme-btn read-more"> <?php _e('Read More', 'fiolancer'); ?> </a>
@@ -203,13 +206,13 @@ $gallery = tpmeta_gallery_field('gallery_fields');
         <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
         <div class="tg-blog-post-meta">
             <ul class="list-wrap">
-                <li><i class="far fa-eye"></i>232 Views</li>
+                <li><i class="far fa-eye"></i> <?php echo get_post_views(get_the_ID()); ?></li>
                 <li><a href="<?php the_permalink(); ?>"><i class="far fa-comments"></i><?php echo get_comments_number(); ?></a></li>
-                <li><i class="far fa-calendar-alt"></i><?php echo get_the_date('d M Y') ?></li>
+                <li><i class="far fa-calendar-alt"></i><?php echo get_the_date('dS M Y') ?></li>
             </ul>
         </div>
         <div class="tg-post-text">
-            <?php the_content(); ?>
+           <?php echo substr(get_the_excerpt(),0, 320);  ?>
         </div>
         <div class="tg-blog-post-bottom">
             <a href="<?php the_permalink(); ?>" class="btn theme-btn read-more"><?php _e('Read More', 'fiolancer'); ?></a>
@@ -231,13 +234,13 @@ $gallery = tpmeta_gallery_field('gallery_fields');
         <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
         <div class="tg-blog-post-meta">
             <ul class="list-wrap">
-                <li><i class="far fa-eye"></i>232 Views</li>
+                <li><i class="far fa-eye"></i><?php echo get_post_views(get_the_ID()); ?></li>
                 <li><a href="<?php the_permalink(); ?>"><i class="far fa-comments"></i><?php echo get_comments_number(); ?></a></li>
-                <li><i class="far fa-calendar-alt"></i> <?php echo get_the_date('d M Y') ?></li>
+                <li><i class="far fa-calendar-alt"></i> <?php echo get_the_date('dS M Y') ?></li>
             </ul>
         </div>
         <div class="tg-post-text">
-            <p><?php the_content(); ?></p>
+           <?php echo substr(get_the_excerpt(),0, 320);  ?>
         </div>
         <div class="tg-blog-post-bottom">
             <a href="blog-details.html" class="btn theme-btn read-more"> <?php _e('Read More', 'fiolancer'); ?></a>
@@ -257,13 +260,14 @@ $gallery = tpmeta_gallery_field('gallery_fields');
         <h2 class="title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
         <div class="tg-blog-post-meta">
             <ul class="list-wrap">
-                <li><i class="far fa-eye"></i> 232 Views</li>
+                <li><i class="far fa-eye"></i><?php echo get_post_views(get_the_ID()); ?></li>
                 <li><a href="<?php the_permalink(); ?>"><i class="far fa-comments"></i><?php echo get_comments_number(); ?></a></li>
-                <li><i class="far fa-calendar-alt"></i> <?php echo get_the_date('d M Y') ?></li>
+                <li><i class="far fa-calendar-alt"></i> <?php echo get_the_date('dS M Y') ?></li>
             </ul>
         </div>
         <div class="tg-post-text">
-            <?php the_content(); ?>
+            <?php echo substr(get_the_excerpt(),0, 320);  ?>
+            
         </div>
         <div class="tg-blog-post-bottom">
             <a href="<?php the_permalink();?>" class="btn theme-btn read-more"><?php _e('Read More', 'fiolancer'); ?></a>

@@ -9,12 +9,12 @@
 
 get_header();
 
-$blog_column 		= is_active_sidebar( 'blog-sidebar' ) ? 'col-xl-9 col-lg-8' : 'col-xl-12 col-lg-12';
+$blog_column 		= is_active_sidebar( 'blog-sidebar' ) ? 'col-lg-8' : 'col-xl-12 col-lg-8';
 ?>
 <!-- breadcrumb area start -->
-<section class="nl-postbox-details-area nl-blog-area pb-120 pt-95">
+<section class="standard-blog-area pt-120 pb-120">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="<?php echo esc_attr($blog_column); ?>">
                 <div class="nl-postbox-details-main-wrapper">
                     <div class="nl-postbox-details-content postbox__text">
@@ -67,8 +67,8 @@ $blog_column 		= is_active_sidebar( 'blog-sidebar' ) ? 'col-xl-9 col-lg-8' : 'co
             </div>
 
             <?php if ( is_active_sidebar( 'blog-sidebar' ) ): ?>
-            <div class="col-xl-3 col-lg-4">
-                <div class="nl-sidebar-wrapper nl-sidebar-ml--24">
+            <div class="col-lg-4 col-md-7">
+                <div class="tg-blog-sidebar">
                     <?php get_sidebar();?>
                 </div>
             </div>

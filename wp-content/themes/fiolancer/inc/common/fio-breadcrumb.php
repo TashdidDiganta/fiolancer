@@ -29,13 +29,13 @@ function fio_breadcrumb_func() {
         }
     }
     elseif ( is_single() && 'post' == get_post_type() ) {
-      $title = 'Single Blog';
+      $title = substr(get_the_title(),0,30);
     }
     elseif ( is_single() && 'services' == get_post_type() ) {
-        $title = 'Single Service';
+        $title = substr(get_the_title(),0,30);
     }
     elseif ( is_single() && 'portfolio' == get_post_type() ) {
-        $title = 'Single Portfolio';
+        $title = substr(get_the_title(),0,30);
     }
     elseif ( is_search() ) {
         $title = esc_html__( 'Search Results for : ', 'fio' ) . get_search_query();
@@ -79,31 +79,6 @@ function fio_breadcrumb_func() {
         }   
     ?>
 
-    <!--Page Header Start-->
-    <!-- <section class="page-header">
-        <div class="page-header__shape-1 float-bob-y">
-            <img src="<?php print esc_attr($bg_main_img);?>" alt="">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <?php if(is_front_page()): ?>
-                    <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Home', 'fio'); ?></a></li>
-                        <li><span>/</span></li>
-                        <li><?php esc_html_e('News', 'fio'); ?></li>
-                    </ul>
-                <?php else: ?>
-                    <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Home', 'fio'); ?></a></li>
-                        <li><span>/</span></li>
-                        <li><?php single_post_title(); ?></li>
-                    </ul>
-                <?php endif; ?>
-                <h2><?php echo fio_kses( $title ); ?></h2>
-            </div>
-        </div>
-    </section> -->
-    <!--Page Header End-->
     <!-- breadcrumb-area -->
         <section class="breadcrumb-area gray-bg">
             <div class="container">
@@ -112,14 +87,22 @@ function fio_breadcrumb_func() {
                         <div class="col-12">
                             <div class="breadcrumb-content">
                                 <span class="sub-title" ><?php echo get_theme_mod('breadcrumb_sub_title', 'fio'); ?></span>
-                                <h2 class="title"> <?php echo fio_kses( $title ); ?> </h2>
+                                <h2 class="title"> <?php echo fio_kses( $title ); ?>....</h2>
                             </div>
                         </div>
                     </div>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Home', 'fio'); ?></a></li>
-                            <li class="breadcrumb-item active" aria-current="page"><?php esc_html_e('Blog', 'fio'); ?></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <?php  
+                                    if(is_single() && get_post_type() == 'post'){
+                                        _e('Blog Details', 'fio');
+                                    } else{
+                                        _e('Blog', 'fio');
+                                    }
+                                ?>
+                            </li>
                         </ol>
                     </nav>
                     <div class="breadcrumb-shape" data-background="<?php print esc_attr($bg_main_img);?>"></div>

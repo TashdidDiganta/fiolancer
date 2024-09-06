@@ -6511,12 +6511,17 @@ blockquote cite,
 	font-weight: 600;
 	color: #777777;
 }
+
+
 .pagination-wrap ul li a:hover,
 .pagination-wrap ul li .current {
-    color: #fff;
+	color: #fff;
+
     background: #5f4bdb;
     border-color: #5f4bdb;
 }
+
+
 .pagination-wrap ul li.prv-next a,
 .pagination-wrap ul li.prv-right a {
 	font-size: 15px;
