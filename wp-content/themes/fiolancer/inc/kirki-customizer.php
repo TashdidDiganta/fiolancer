@@ -524,6 +524,81 @@ function header_breadcrumb_section(){
 }
 header_breadcrumb_section();
 
+// Blog Socials
+function blog_socialmedia_section(){
+
+    new \Kirki\Section(
+        'blog_social_section',
+        [
+            'title'       => esc_html__( 'Blog Social Media', 'fio' ),
+            'description' => esc_html__( 'Add Social Media', 'fio' ),
+            'panel'       => 'panel_id',
+            'priority'    => 190,
+        ]
+    );
+
+    new \Kirki\Field\Repeater(
+        [
+            'settings'     => 'fio_blog_single_social',
+            'label'        => esc_html__( 'Add New Social', 'kirki' ),
+            'section'      => 'blog_social_section',
+            'priority'     => 10,
+
+            'default'      => [
+            ],
+            'row_label'    => [
+                'type'  => 'field',
+                'value' => esc_html__( 'ROW', 'kirki' ),
+                'field' => 'link_target',
+            ],
+            'fields' => [
+                'link_target'   => [
+                    'type'        => 'select',
+                    'label'       => esc_html__( 'Choose social media', 'kirki' ),
+                    'description' => esc_html__( 'Description', 'kirki' ),
+                    'default'     => "<i class='fab fa-facebook-f'></i>",
+                    'choices' => [
+                        "<i class='fab fa-facebook-f'></i>" => "Facebook",
+                        "<i class='fab fa-twitter'></i>" => "Twitter",
+                        "<i class='fab fa-linkedin'></i>" => "Linkedin-in",
+                        "<i class='fab fa-pinterest'></i>" => "Pinterest",
+                    ],
+                ],
+                'link_url'    => [
+                    'type'        => 'text',
+                    'label'       => esc_html__( 'Link URL', 'kirki' ),
+                    'description' => esc_html__( 'Description', 'kirki' ),
+                    'default'     => '',
+                ],
+            ],
+        ]
+    );
+
+
+    $menus = wp_get_nav_menus();
+
+    $options = [];
+
+    foreach ( $menus as $menu ) {
+        $options[ $menu->slug ] = $menu->name;
+    }
+
+    new \Kirki\Field\Select(
+        [
+            'settings'    => 'footer_navs',
+            'label'       => esc_html__( 'Footer Navs', 'fio' ),
+            'section'     => 'footer_layout_section',
+            'default'     => '4',
+            'placeholder' => esc_html__( 'Choose a menu', 'fio' ),
+            'choices'     => $options,
+        ]
+    );
+
+
+}
+blog_socialmedia_section();
+
+
 // footer layout
 function footer_layout_section(){
 

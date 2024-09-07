@@ -35,8 +35,8 @@ add_filter( 'body_class', 'fio_body_classes' );
 function fio_get_tag() {
     $html = '';
     if ( has_tag() ) {
-        $html .= '<div class="tagcloud tagcloud-sm"><span>' . esc_html__( 'Post Tags : ', 'fio' ) . '</span>';
-        $html .= get_the_tag_list( '', ' ', '' );
+        $html .= '<div class="tg-post-tag"><h5 class="tag-title">' . esc_html__( 'Post Tags', 'fio' ) .'</h5>';
+        $html .= get_the_tag_list( '<ul class="list-wrap mb-0"><li>', ' ', '<ul><li>' );
         $html .= '</div>';
     }
     return $html;

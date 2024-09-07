@@ -16,54 +16,25 @@ $blog_column 		= is_active_sidebar( 'blog-sidebar' ) ? 'col-lg-8' : 'col-xl-12 c
     <div class="container">
         <div class="row justify-content-center">
             <div class="<?php echo esc_attr($blog_column); ?>">
-                <div class="nl-postbox-details-main-wrapper">
-                    <div class="nl-postbox-details-content postbox__text">
-                        <?php
-							while ( have_posts() ):
-							the_post();
+                <?php
+                    while ( have_posts() ):
+                    the_post();
 
-							get_template_part( 'template-parts/content', get_post_format() );
-						?>
-						
-                        <?php 
-							if ( get_previous_post_link() AND get_next_post_link() ): 
-							$prev_post = get_adjacent_post(false, '', true);
-							$next_post = get_adjacent_post(false, '', false);
-						?>
-						<div class="news-details__pagination-box">
-							<ul class="news-details__pagination list-unstyled clearfix">
-								<?php if ( get_previous_post_link() ): ?>
-								<li class="next">
-									<a href="<?php echo get_permalink($prev_post->ID) ?>" aria-label="Previous"><i class="fas fa-long-arrow-alt-left"></i><?php esc_html_e('Prev Post', 'fio'); ?></a>
-								</li>
-								<?php endif; ?>
-								<li class="count"><a href="#"></a></li>
-								<li class="count"><a href="#"></a></li>
-								<li class="count"><a href="#"></a></li>
-								<li class="count"><a href="#"></a></li>
-								<?php if ( get_next_post_link() ): ?>
-								<li class="previous">
-									<a href="<?php echo get_permalink($next_post->ID) ?>" aria-label="Next"><?php esc_html_e('Next Post', 'fio'); ?><i class="fas fa-long-arrow-alt-right"></i></a>
-								</li>
-								<?php endif; ?>
-							</ul>
-						</div>
-                        <?php endif;?>
-                        <!-- navigation end -->
+                    get_template_part( 'template-parts/content', get_post_format() );
+                ?>
+                
+                <?php 
+                    if ( get_previous_post_link() AND get_next_post_link() ): 
+                    $prev_post = get_adjacent_post(false, '', true);
+                    $next_post = get_adjacent_post(false, '', false);
+                ?>
+                <?php endif;?>
+                <!-- navigation end -->
 
-                        <?php
-							get_template_part( 'template-parts/biography', get_post_format() );
-
-							// If comments are open or we have at least one comment, load up the comment template.
-							if ( comments_open() || get_comments_number() ):
-								comments_template();
-							endif;
-
-							endwhile; // End of the loop.
-						?>
-                    </div>
-                </div>
-
+                <?php
+                    get_template_part( 'template-parts/biography', get_post_format() );
+                    endwhile; // End of the loop.
+                ?>
             </div>
 
             <?php if ( is_active_sidebar( 'blog-sidebar' ) ): ?>

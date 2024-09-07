@@ -15,7 +15,7 @@ if ( post_password_required() ) {
 ?>
 
 <?php if ( have_comments() || comments_open()) : ?>
-<div id="comments" class="blog-post-comment nl-postbox-details-comment-wrapper">
+<div id="comments" class="blog-post-comment">
 
     <?php if ( get_comments_number() >= 1 ): ?>
     <div class="news-details__comment">
@@ -77,11 +77,11 @@ if ( post_password_required() ) {
     $aria_req    = ( $req ? " aria-required='true'" : '' );
 
     $fields = array(
-        'author' => '<div class="row"><div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6"><div class="comment-form__input-box"><input placeholder="'.  esc_attr__('Enter Name', 'fio').'" id="author" class="nl-form-control" name="author" type="text" value="' . esc_attr( $commenter[ 'comment_author' ] ) . '" size="30"' . $aria_req . ' /></div></div>',
+        'author' => '<div class="row"><div class="col-md-6"><div class="comment-field"><input placeholder="'.  esc_attr__('Enter Name', 'fio').'" id="author" class="nl-form-control" name="author" type="text" value="' . esc_attr( $commenter[ 'comment_author' ] ) . '" size="30"' . $aria_req . ' /></div></div>',
 
-        'email'  => '<div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6"><div class="comment-form__input-box"><input placeholder="'.  esc_attr__('Enter Email', 'fio').'" id="email" name="email" class="nl-form-control" type="email" value="' . esc_attr( $commenter[ 'comment_author_email' ] ) . '" size="30"' . $aria_req . ' /></div></div>',
+        'email'  => '<div class="col-md-6"><div class="comment-field"><input placeholder="'.  esc_attr__('Enter Email', 'fio').'" id="email" name="email" class="nl-form-control" type="email" value="' . esc_attr( $commenter[ 'comment_author_email' ] ) . '" size="30"' . $aria_req . ' /></div></div>',
 
-        'url'    => '<div class="col-xxl-4 col-xl-4 col-lg-12"><div class="comment-form__input-box"><input placeholder="'.  esc_attr__('Enter Website', 'fio').'" id="url" name="url" class="nl-form-control" type="url" value="' . esc_attr( $commenter[ 'comment_author_url' ] ) . '" size="30" /></div></div></div>'
+        'url'    => '<div class="col-md-12"><div class="comment-field"><input placeholder="'.  esc_attr__('Enter Website', 'fio').'" id="url" name="url" class="nl-form-control" type="url" value="' . esc_attr( $commenter[ 'comment_author_url' ] ) . '" size="30" /></div></div></div>'
     );
 
     if ( is_user_logged_in() ) {
@@ -94,12 +94,12 @@ if ( post_password_required() ) {
         'comment_field'      => '
             <div class="row">
                 <div class="col-md-12 ' . $cl . '">
-                    <div class="comment-form__input-box"><textarea class="nl-form-control msg-box" placeholder="'.  esc_attr__('Enter Your Comment', 'fio').'" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+                    <div class="comment-field"><textarea class="nl-form-control msg-box" placeholder="'.  esc_attr__('Enter Your Comment', 'fio').'" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
                 </div></div>
                 <div class="clearfix"></div>
             </div>
         ',
-        'submit_button'    => '<div class="col-xl-12"><button class="contact-page__btn" type="submit">' . esc_html__( 'Submit Comment', 'fio' ) . '<span></span></button></div>',
+        'submit_button'    => '<div class="col-xl-12"><button class="btn theme-btn" type="submit"><i class="far fa-comments"></i>' . esc_html__( 'Post Comment', 'fio' ) .'</button></div>',
         /** This filter is documented in wp-includes/link-template.php */
         'must_log_in'        => '
             <p class="must-log-in">
@@ -114,8 +114,8 @@ if ( post_password_required() ) {
         'id_submit'          => 'submit',
         'class_submit'       => 'contact-page__btn',
         'title_reply'        => esc_html__( 'Leave a Reply', 'fio' ),
-        'title_reply_before' => '<div class="comment-form__title-box"><h3 class="comment-form__title">',
-        'title_reply_after'  => '</h3></div>',
+        'title_reply_before' => '<h5 class="comment-reply-title">',
+        'title_reply_after'  => '</h5>',
         'title_reply_to'     => esc_html__( 'Leave a Reply to %s', 'fio' ),
         'cancel_reply_link'  => esc_html__( 'Cancel reply', 'fio' ),
         'label_submit'       => esc_html__( 'Submit Comment', 'fio' ),

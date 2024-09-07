@@ -14,11 +14,11 @@ $fio_video_url = function_exists( 'get_field' ) ? get_field( 'fio_post_video' ) 
 
 
 $fio_blog_single_social = get_theme_mod( 'fio_blog_single_social', true );
-$blog_tag_col = $fio_blog_single_social ? 'col-xl-8 col-lg-6' : 'col-xl-12';
+$blog_tag_col = $fio_blog_single_social ? 'col-xl-6 col-md-7' : 'col-xl-12';
 
 if ( is_single() ) : ?>
 <!-- details start -->
-<article id="post-<?php the_ID();?>" <?php post_class( 'nl-postbox-details-article' );?>>
+<article id="post-<?php the_ID();?>" <?php post_class( 'tg-blog-post-item mb-0' );?>>
 
     
     <div class="news-details__img">
@@ -89,40 +89,36 @@ if ( is_single() ) : ?>
         <!-- content start -->
         <?php the_content(); ?>
 
-        <?php
-            // wp_link_pages( [
-            //     'before'      => '<div class="page-links">' . esc_html__( 'Pages:', 'fio' ),
-            //     'after'       => '</div>',
-            //     'link_before' => '<span class="page-number">',
-            //     'link_after'  => '</span>',
-            // ] );
-        ?>
-    </div>
-
-    <?php if(has_tag() OR $fio_blog_single_social) :?>
-    <div class="nl-postbox-details-share-wrapper">
-        <div class="row">
-            <div class="<?php echo esc_attr($blog_tag_col); ?>">
-                <div class="nl-postbox-details-tags tagcloud">
+        <?php if(has_tag() OR $fio_blog_single_social) :?>
+        <div class="blog-details-bottom">
+            <div class="row">
+                <div class="<?php echo esc_attr($blog_tag_col); ?>">
                     <?php print fio_get_tag(); ?>
                 </div>
+    
+                <?php if(!empty($fio_blog_single_social)) :?>
+                    <div class="col-xl-6 col-md-5">
+                        <div class="post-share text-md-end">
+                            <h5><?php echo _e('Social Share',''); ?></h5>
+                            <ul class="list-wrap mb-0">
+                                <?php foreach($fio_blog_single_social as $social) : ?>
+                                    <li><a href="<?php echo $social['link_url']; ?>"><?php echo $social['link_target']; ?></a></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
-
-            <?php if(!empty($fio_blog_single_social)) :?>
-            <div class="col-xl-4 col-lg-6">
-                <div class="nl-postbox-details-share text-md-end">
-                    <?php if(function_exists('fio_blog_single_social')): ?>
-                    <?php print fio_blog_single_social(); ?>
-                    <?php endif; ?>
-                </div>
-            </div>
-            <?php endif; ?>
         </div>
+        <?php endif ?>
+        <?php
+        // If comments are open or we have at least one comment, load up the comment template.
+        if ( comments_open() || get_comments_number() ):
+            comments_template();
+        endif;
+        ?>
     </div>
-    <?php endif ?>
-
 </article>
-
 
 <!-- details end -->
 <?php else: ?>
