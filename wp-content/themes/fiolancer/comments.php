@@ -23,11 +23,11 @@ if ( post_password_required() ) {
             <?php
                 $comment_no = number_format_i18n( get_comments_number() );
                 $comment_text = ( !empty( $comment_no ) AND ( $comment_no > 1 ) ) ? esc_html__( ' Comments', 'fio' ) : esc_html__( ' Comment ', 'fio' );
-                $comment_no = ( !empty( $comment_no ) AND ( $comment_no > 0 ) ) ? '<h2 class="nl-postbox-details-comment-title">' . esc_html( $comment_no . $comment_text ) . '</h2>' : ' ';
+                $comment_no = ( !empty( $comment_no ) AND ( $comment_no > 0 ) ) ? '<div class="comment-wrap-title mb-30"><h5 class="nl-postbox-details-comment-title comment-title">' . esc_html( $comment_no . $comment_text ) . '</h5></div>' : ' ';
                 print sprintf( "%s", $comment_no );
             ?>
 
-            <div class="nl-postbox-details-comment-inner latest-comments">
+            <div class="nl-postbox-details-comment-inner latest-comments mb-30">
                 <ul>
                     <?php
                         wp_list_comments( [

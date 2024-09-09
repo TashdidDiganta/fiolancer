@@ -20,14 +20,16 @@ function fio_scripts()
     wp_enqueue_style('animate', FIO_THEME_CSS_DIR . 'animate.min.css', []);
     wp_enqueue_style('magnific-popup', FIO_THEME_CSS_DIR . 'magnific-popup.css', []);
     wp_enqueue_style('fontawesome', FIO_THEME_CSS_DIR . 'fontawesome-all.min.css', []);
+    wp_enqueue_style('fontawesome-pro', FIO_THEME_CSS_DIR . 'font-awesome-pro.css', []);
     wp_enqueue_style('swiper-bundle', FIO_THEME_CSS_DIR . 'swiper-bundle.css', []);
     wp_enqueue_style('flaticon', FIO_THEME_CSS_DIR . 'flaticon.css', []);
     wp_enqueue_style('odometer', FIO_THEME_CSS_DIR . 'odometer.css"', []);
     wp_enqueue_style('jquery-ui', FIO_THEME_CSS_DIR . 'jquery-ui.css', []);
     wp_enqueue_style('slick', FIO_THEME_CSS_DIR . 'slick.css', []);
     wp_enqueue_style('default', FIO_THEME_CSS_DIR . 'default.css', []);
-    wp_enqueue_style('style', FIO_THEME_CSS_DIR . 'style.css', []);
+    wp_enqueue_style('fio-unit', FIO_THEME_CSS_DIR . 'fio-unit.css', [], time());
     wp_enqueue_style('spacing', FIO_THEME_CSS_DIR . 'responsive.css', []);
+    wp_enqueue_style('style', FIO_THEME_CSS_DIR . 'style.css', []);
 
     // all js
     wp_enqueue_script('bootstrap.min', FIO_THEME_JS_DIR . 'bootstrap.min.js', ['jquery'], '', true);

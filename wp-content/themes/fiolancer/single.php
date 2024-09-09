@@ -12,10 +12,11 @@ get_header();
 $blog_column 		= is_active_sidebar( 'blog-sidebar' ) ? 'col-lg-8' : 'col-xl-12 col-lg-8';
 ?>
 <!-- breadcrumb area start -->
-<section class="standard-blog-area pt-120 pb-120">
+<section class="standard-blog-area pt-120 pb-120 nl-blog-area">
     <div class="container">
         <div class="row justify-content-center">
             <div class="<?php echo esc_attr($blog_column); ?>">
+                <div class="postbox__text">
                 <?php
                     while ( have_posts() ):
                     the_post();
@@ -35,6 +36,7 @@ $blog_column 		= is_active_sidebar( 'blog-sidebar' ) ? 'col-lg-8' : 'col-xl-12 c
                     get_template_part( 'template-parts/biography', get_post_format() );
                     endwhile; // End of the loop.
                 ?>
+                </div>
             </div>
 
             <?php if ( is_active_sidebar( 'blog-sidebar' ) ): ?>

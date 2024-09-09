@@ -240,11 +240,11 @@ if ( !function_exists( 'fio_comment' ) ) {
         ?>
             <li id="comment-<?php comment_ID();?>">
                 <div class="comments-box nl-postbox-details-comment-box d-sm-flex align-items-start comment-one__single">
-                    <div class="nl-postbox-details-comment-thumb comment-one__image">
+                    <div class="nl-postbox-details-comment-thumb comment-one__image comments-avatar">
                         <?php print get_avatar( $comment, 102, null, null, [ 'class' => [] ] );?>
                     </div>
-                    <div class="nl-postbox-details-comment-content comment-one__content">
-                        <h3 class="comment-author-name"><?php print get_comment_author_link();?> <span><?php comment_time( get_option( 'date_format' ) );?></span></h3>
+                    <div class="nl-postbox-details-comment-content comment-one__content avatar-name mb-10">
+                        <h6 class="comment-author-name name"><?php print get_comment_author_link();?> <span><?php comment_time( get_option( 'date_format' ) );?></span></h6>
                         <?php comment_text();?>
                         <?php comment_reply_link( array_merge( $args, [ 'depth' => $depth, 'max_depth' => $args['max_depth'] ] ) );?>
                     </div>
@@ -349,56 +349,6 @@ function fio_post_metabox( $meta_boxes ) {
 
 
 
-
-
-// added custom post type
-
-function fio_custom_post_type() {
-	register_post_type('product',
-		array(
-			'labels'      => array(
-				'name'          => __(' fio Products', 'textdomain'),
-				'singular_name' => __('Product', 'textdomain'),
-                'add_new' => __( 'Add New' ),
-                'add_new_item' => __( 'Add New ThemePost' ),
-                'edit_item' => __( 'Edit Product' ),
-                'new_item' => __( 'New ThemePost' ),
-                'view_item' => __( 'View ThemePost' ),
-                'search_items' => __( 'Search Producu' ),
-                
-			),
-				'public'      => true,
-				'has_archive' => true,
-                'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' ,'headway-seo') 
-
-		)
-
-	);
-
-    register_post_type('portfolio',
-    array(
-        'labels'      => array(
-            'name'          => __(' fio Portfolio', 'textdomain'),
-            'singular_name' => __('Product', 'textdomain'),
-        ),
-            'public'      => true,
-            'has_archive' => true,
-    
-    )
-    );
-
-    register_post_type('portfolio',
-    array(
-        'labels'      => array(
-            'name'          => __(' fio Services', 'textdomain'),
-            'singular_name' => __('Product', 'textdomain'),
-        ),
-            'public'      => true,
-            'has_archive' => true,
-    )
-    );
-}
-add_action('init', 'fio_custom_post_type');
 
 function add_meta_box_function(){
     add_meta_box("id", "prodact Dig", "callback_function", "product", "side","high");

@@ -99,7 +99,7 @@ if ( is_single() ) : ?>
                 <?php if(!empty($fio_blog_single_social)) :?>
                     <div class="col-xl-6 col-md-5">
                         <div class="post-share text-md-end">
-                            <h5><?php echo _e('Social Share',''); ?></h5>
+                            <h5><?php echo _e('Social Share','fiola'); ?></h5>
                             <ul class="list-wrap mb-0">
                                 <?php foreach($fio_blog_single_social as $social) : ?>
                                     <li><a href="<?php echo $social['link_url']; ?>"><?php echo $social['link_target']; ?></a></li>
