@@ -6181,7 +6181,7 @@ blockquote p,
 	font-weight: 700;
 	line-height: 1.35;
 	text-transform: inherit;
-	font-size: 28px;
+	font-size: 28px!important;
 	color: #292b37;
 	font-style: normal;
 	font-family: 'Poppins', sans-serif;
@@ -6193,7 +6193,7 @@ blockquote::before,
 .tg-blog-details-content blockquote::before {
 	content: "";
 	background-image: url(../img/blog/quote_icon.png);
-	display: block;
+	display: inline-block;
 	border-radius: 50%;
 	width: 60px;
 	height: 60px;
@@ -6260,6 +6260,7 @@ blockquote cite,
     padding: 7px 20px;
     display: inline-block;
     color: #222;
+	margin-bottom: 10px;
     background: #f5f5f5;
     font-weight: 700;
     border-radius: 4px;

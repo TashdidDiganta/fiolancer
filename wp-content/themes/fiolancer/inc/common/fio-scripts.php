@@ -30,6 +30,7 @@ function fio_scripts()
     wp_enqueue_style('fio-unit', FIO_THEME_CSS_DIR . 'fio-unit.css', [], time());
     wp_enqueue_style('spacing', FIO_THEME_CSS_DIR . 'responsive.css', []);
     wp_enqueue_style('style', FIO_THEME_CSS_DIR . 'style.css', []);
+    wp_enqueue_style('fio-style', get_stylesheet_uri());
 
     // all js
     wp_enqueue_script('bootstrap.min', FIO_THEME_JS_DIR . 'bootstrap.min.js', ['jquery'], '', true);
@@ -44,6 +45,7 @@ function fio_scripts()
     wp_enqueue_script('particles', FIO_THEME_JS_DIR . 'particles.min.js', ['jquery'], '', true);
     wp_enqueue_script('parallax', FIO_THEME_JS_DIR . 'parallax.min.js', ['jquery'], '', true);
     wp_enqueue_script('slick', FIO_THEME_JS_DIR . 'slick.min.js', ['jquery'], '', true);
+    wp_enqueue_script('nice-select',  FIO_THEME_JS_DIR . 'nice-select.js', ['jquery'], '', true);
     wp_enqueue_script('ajax', FIO_THEME_JS_DIR . 'ajax-form.js', ['jquery'], false, true);
     wp_enqueue_script('wow', FIO_THEME_JS_DIR . 'wow.min.js', ['imagesloaded'], false, true);
     wp_enqueue_script('main', FIO_THEME_JS_DIR . 'main.js', ['jquery'], false, true);
