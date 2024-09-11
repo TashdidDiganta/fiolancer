@@ -6317,7 +6317,7 @@ blockquote cite,
 	font-size: 26px;
 	margin-bottom: 0;
 }
-.latest-comments ul:not(.comment-text ul) {
+.latest-comments ul.list-wrap:not(.comment-text ul.list-wrap) {
 	margin: 0;
 	padding: 0;
 }

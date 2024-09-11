@@ -20,7 +20,7 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'wp_fiolancer' );
+define( 'DB_NAME', 'fiolancer' );
 
 /** Database username */
 define( 'DB_USER', 'root' );
@@ -48,14 +48,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'YiQ05Zx73E$>OfJh@`iVx@;39Ogq%[pb:tkk7P$M(L2P4B!SMW9.Hi2IRd~r[z<v' );
-define( 'SECURE_AUTH_KEY',  '%?ypXP|pOzZ8PLyx<LUO=RYP}1CTR$[P&U>D;IF>^lN7V[ZPG$,:@&!Gi(To8| k' );
-define( 'LOGGED_IN_KEY',    '>RsCwf!#$cu#I&sxKGO?7rRF%vButivLVU+hvcf=$`h8A2Rk}_A#GgMh/L=&y?]u' );
-define( 'NONCE_KEY',        '0zKAYpq%xFc@=j[|$Bn///ay}p|`Uc&_EC:drb.{U(T<;!:iQzPfAL%u(TiKjbba' );
-define( 'AUTH_SALT',        'ns|^E@ -tArqj3xjH{YOswRRYM~f e.J}.T0@z%}MdF %xG2h)9yLi51c>OIf`BO' );
-define( 'SECURE_AUTH_SALT', 'Leiu,zxpGSi OK c+~0I6/dE7*z )6 fb*8ImP/%zp8MlqV3<I9~$!u;o=5mnr]#' );
-define( 'LOGGED_IN_SALT',   'i.!qFFCe$jO&9qX0hk_]a,` M=M?(!}vc ,g%P<{xy%59HikeI+?~m%0lO?Tu^G+' );
-define( 'NONCE_SALT',       '4&n9^yGtl7Z5{#HX,}hWNIskXX:}t;PjDV?p]  #1WfJ1/5M8<2H}KEivJ?IsWS[' );
+define( 'AUTH_KEY',         'WL$K?<X${{&3>SyyL?av7}sc=&}m%+1cZbVIZU-Eqj{boW$(,5m?Z+:X16^eVN*0' );
+define( 'SECURE_AUTH_KEY',  '0ZXOp1$8K+/y4-;Q71VxYZ9VZ)p_j+u{eH?D`,7a$8o+i,w,hDnGp-hD5lLQ?Q^@' );
+define( 'LOGGED_IN_KEY',    '6R/t:H@d4-*XK@=tQ?=Cky;C2X23j;XmI7R`UOD1o&FTKf7s455Vw4MUY!f*hr4v' );
+define( 'NONCE_KEY',        'R6YZN:^7ix;t4VdcFEar*kyFdc+)Z6??{L&CH,wNYNEl@S|BIhI=Zyo$h-=9$XpJ' );
+define( 'AUTH_SALT',        'siTr%B_15G8U)+w>|t9&-$|;Uy+rEXUEE$Q-_OFH`BEQJa>flRs/.9!}BjS*}74@' );
+define( 'SECURE_AUTH_SALT', 'A9!g@XDJhjxu4Nl#^{!vrx=W$ntLpP-V[?K@@#.=#8rv T:7SB#(g%RC2@3/;`L!' );
+define( 'LOGGED_IN_SALT',   'VTr.35nUNZ[.,PNLp,m$2$TlnusPWutteUT#biHgxG2Gl^)SIkwj6 #mdwyzXm&9' );
+define( 'NONCE_SALT',       '@/Y&e8E<SsY,@xrb5K@2#Yhe>DYdaB8tYYi.t&0^[jAkLzDwK}wmvbL}B%,89$,Z' );
 
 /**#@-*/
 
@@ -79,7 +79,8 @@ $table_prefix = 'wp_';
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
+define( 'FS_METHOD', 'direct' );
 
 /* Add any custom values between this line and the "stop editing" line. */
 

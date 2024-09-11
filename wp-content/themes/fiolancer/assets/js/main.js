@@ -144,6 +144,10 @@ $('.social-toggle-icon').on('click', function () {
 });
 
 
+$(document).ready(function() {
+	$('select').niceSelect();
+  });
+
 /*=============================================
 	=          Freelancer Active           =
 =============================================*/

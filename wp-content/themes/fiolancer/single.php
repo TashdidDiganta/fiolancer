@@ -16,26 +16,28 @@ $blog_column 		= is_active_sidebar( 'blog-sidebar' ) ? 'col-lg-8' : 'col-xl-12 c
     <div class="container">
         <div class="row justify-content-center">
             <div class="<?php echo esc_attr($blog_column); ?>">
-                <div class="postbox__text">
-                <?php
-                    while ( have_posts() ):
-                    the_post();
-
-                    get_template_part( 'template-parts/content', get_post_format() );
-                ?>
-                
-                <?php 
-                    if ( get_previous_post_link() AND get_next_post_link() ): 
-                    $prev_post = get_adjacent_post(false, '', true);
-                    $next_post = get_adjacent_post(false, '', false);
-                ?>
-                <?php endif;?>
-                <!-- navigation end -->
-
-                <?php
-                    get_template_part( 'template-parts/biography', get_post_format() );
-                    endwhile; // End of the loop.
-                ?>
+                <div class="nl-postbox-details-comment-wrapper">
+                    <div class="nl-postbox-details-content postbox__text">
+                        <?php
+                            while ( have_posts() ):
+                            the_post();
+    
+                            get_template_part( 'template-parts/content', get_post_format() );
+                        ?>
+                        
+                        <?php 
+                            if ( get_previous_post_link() AND get_next_post_link() ): 
+                            $prev_post = get_adjacent_post(false, '', true);
+                            $next_post = get_adjacent_post(false, '', false);
+                        ?>
+                        <?php endif;?>
+                        <!-- navigation end -->
+    
+                        <?php
+                            get_template_part( 'template-parts/biography', get_post_format() );
+                            endwhile; // End of the loop.
+                        ?>
+                    </div>
                 </div>
             </div>
 

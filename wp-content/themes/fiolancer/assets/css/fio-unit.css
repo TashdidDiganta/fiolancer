@@ -360,8 +360,8 @@ div.latest-comments>ul {
 }
 
 .page-links .current {
-    background: var(--nilos-black);
-    color: var(--nilos-white);
+    background: #5f4bdb;
+    color: #fff;
     line-height: 33px;
 }
 
@@ -371,7 +371,7 @@ div.latest-comments>ul {
 }
 
 .wp-block-archives-list.extraclass.wp-block-archives li a {
-    color: var(--nilos-black);
+    color: #292b37;
 }
 
 .wp-block-archives-dropdown .nice-select {
@@ -427,7 +427,11 @@ div.latest-comments>ul {
 
 .postbox__text ol,
 .postbox__text ul {
-    padding-left: 0px;
+    padding-left: 20px;
+}
+
+.postbox__text ul.list-wrap{
+    padding-left: 0;
 }
 
 .postbox__text .wp-block-comments-title {
@@ -1129,7 +1133,7 @@ dl a {
 }
 
 .post-password-form input[type="password"]:focus {
-    border-color: var(--nilos-black);
+    border-color: #f1f1f1;
 }
 
 .post-password-form label {
@@ -1139,10 +1143,11 @@ dl a {
 .post-password-form input[type="submit"] {
     width: 120px;
     height: 50px;
-    background: var(--nilos-black);
-    color: var(--nilos-white);
-    border: 0;
+    background: #5f4bdb;
+    color: #fff;
+    border-radius: 4px;
     margin-top: 10px;
+    border: 0;
     transition: .3s;
 }
 
@@ -2002,7 +2007,7 @@ ul.wp-block-social-links {
     position: absolute;
     content: "\f107";
     top: 50%;
-    right: 0;
+    right: 10px;
     font-family: "Font Awesome 6 Pro";
     color: #444;
     font-weight: 500;
@@ -2027,6 +2032,7 @@ ul.wp-block-social-links {
 }
 
 .nice-select.open .list {
+    width: 100%;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
