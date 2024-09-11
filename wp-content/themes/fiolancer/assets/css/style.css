@@ -7019,7 +7019,7 @@ blockquote cite,
 .footer-contact p:last-child {
 	margin-bottom: 0;
 }
-.footer-widget .menu, .menu-item {
+.footer-widget .menu {
 	padding: 0;
 	display: flex;
 	flex-wrap: wrap;
